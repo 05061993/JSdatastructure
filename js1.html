@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p>Creating a JavaScript Object.</p>
+
+    <p id="demo"></p>
+
+    <script>
+        var Vehicle = function(maxSpeed, vtype, displacement) {
+            this.maxSpeed = maxSpeed;
+            this.vtype = vtype;
+            this.displacement = displacement;
+            document.write('vehicle instantiated..');
+        };
+
+        Vehicle.prototype.setmaxspeed = function(arg) {
+            this.maxSpeed = arg;
+            return this.maxSpeed;
+            // document.write("max speed is:"+this.maxSpeed);
+        };
+
+        Vehicle.prototype.settype = function(arg) {
+            this.vtype = arg;
+            return this.vtype;
+        };
+
+        Vehicle.prototype.setDisp = function(arg) {
+            this.displacement = arg;
+            return this.displacement;
+        };
+
+
+        var bike = new Vehicle(80, "biketype", 20);
+        bike.getSpeed = function() {
+            return this.maxSpeed;
+        };
+
+        document.write("displacement of vehicle before setting..-->" + bike.displacement);
+        document.write("<br>");
+        document.write("displacement of vehicle after setting..-->" + bike.setDisp(100));
+        document.write("<br>");
+
+
+        document.write("type of vehicle before setting..-->" + bike.vtype);
+        document.write("<br>");
+        document.write("type of vehicle after setting..-->" + bike.settype("bike-YAMAHA"));
+        document.write("<br>");
+
+        document.write("bike speed is(inheritung from parent object called Vehicle)-->" + bike.getSpeed()); //before seeting maxspeed value
+
+        document.write("speed of vehicle before setting..-->" + bike.maxSpeed);
+        document.write("<br>");
+        document.write("displacement of vehicle after setting..-->" + bike.setmaxspeed(200));
+        document.write("<br>");
+    </script>
+</body>
+
+</html>
