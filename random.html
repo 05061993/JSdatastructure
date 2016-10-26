@@ -1,0 +1,35 @@
+<!-- /**
+* FileName:random.html
+* CreatedBy: Swati SD
+* Date :26-10-2016
+* Purpose :displaying random whole numbers between any two values..
+*/ -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // Minimum and maximum numbers in our range
+        var minimum = parseInt(prompt("enter starting value"));
+        var maximum = parseInt(prompt("enter ending value"));
+
+        // This variable represents the width of our interval
+        // In this case, range = 5
+        var range = maximum - minimum;
+
+        // This variable is our random integer
+        var randInt = minimum + Math.round(range * Math.random());
+        document.write(" random whole numbers between entered start and end values--->");
+        document.write(randInt);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
