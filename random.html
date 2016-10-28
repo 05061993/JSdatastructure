@@ -2,7 +2,7 @@
 * FileName:random.html
 * CreatedBy: Swati SD
 * Date :26-10-2016
-* Purpose :displaying random whole numbers between any two values..
+* Purpose :displaying random whole numbers between a range values..
 */ -->
 <!DOCTYPE html>
 <html lang="en">
@@ -22,9 +22,14 @@
         var range = maximum - minimum;
 
         // This variable is our random integer
-        var randInt = minimum + Math.round(range * Math.random());
+
         document.write(" random whole numbers between entered start and end values--->");
-        document.write(randInt);
+        var i;
+        for (i = 0; i <= range; i++) {
+            var randInt = minimum + Math.round(range * Math.random());
+            document.write(randInt);
+            document.write("<br>");
+        }
     </script>
 </head>
 

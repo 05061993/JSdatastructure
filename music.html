@@ -1,0 +1,83 @@
+<!-- /**
+* FileName:random.html
+* CreatedBy: Swati SD
+* Date :26-10-2016
+* Purpose :displaying random whole numbers between a range values..
+*/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var collection = {
+            "2548": {
+                "album": "Slippery When Wet",
+                "artist": "Bon Jovi",
+                "tracks": [
+                    "Let It Rock",
+                    "You Give Love a Bad Name"
+                ]
+            },
+            "2468": {
+                "album": "1999",
+                "artist": "Prince",
+                "tracks": [
+                    "1999",
+                    "Little Red Corvette"
+                ]
+            },
+            "1245": {
+                "artist": "Robert Palmer",
+                "tracks": []
+            },
+            "5439": {
+
+                "album": "ABBA Gold"
+            }
+        };
+        // Keep a copy of the collection for tests
+
+
+        // Only change code below this line
+        function updateRecords(id, prop, value) {
+
+            if (prop !== "tracks") {
+                collection[id].tracks = [];
+                collection[id][prop] = value;
+            } else if (value) {
+                if (collection[id].hasOwnProperty("tracks") === false)
+                    collection[id].tracks = [];
+                collection[id].tracks.push(value);
+            }
+            if (value === "")
+                delete collection[id][prop];
+            return collection;
+        }
+
+        // Alter values below to test your code
+
+        updateRecords(5439, "tracks", "Take a Chance on Me");
+        var collectionCopy = JSON.parse(JSON.stringify(collection));
+
+        console.log(collectionCopy);
+
+
+
+        document.write("the value of artist prop @  id 1245-->s");
+        document.write(collectionCopy[1245].artist);
+        document.write("<br>");
+        document.write("modified value @ id 5439-->");
+        document.write(collectionCopy[5439].tracks); //modified @5439 location
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
